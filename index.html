@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タイ語 Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .quiz-container {
+            width: 60%;
+            margin: 0 auto;
+        }
+        .question {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        .choices {
+            margin: 20px 0;
+        }
+        .choices button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .choices button.selected {
+            background-color: lightblue;
+        }
+        .result {
+            margin-top: 30px;
+            font-size: 30px;
+        }
+        .result.success {
+            color: green;
+        }
+        .result.failure {
+            color: blue;
+        }
+        .retry-btn {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .retry-btn:hover {
+            background-color: #45a049;
+        }
+        .correct-answer {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>タイ語 Quiz</h1>
+    <div class="quiz-container">
+        <form id="quizForm">
+            <!-- Question 1 -->
+            <div class="question" id="question1">
+                <p>Q.1 タイ語の「แม่บ้าน」の意味は何ですか？</p>
+                <div class="choices">
+                    <button type="button" onclick="recordAnswer(1, 'A', this)">A) 母親</button>
+                    <button type="button" onclick="recordAnswer(1, 'B', this)">B) 家政婦</button>
+                    <button type="button" onclick="recordAnswer(1, 'C', this)">C) 主婦</button>
+                    <button type="button" onclick="recordAnswer(1, 'D', this)">D) 学生</button>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question" id="question2">
+                <p>Q.2「ความสุข」の正しい意味はどれですか？</p>
+                <div class="choices">
+                    <button type="button" onclick="recordAnswer(2, 'A', this)">A) 悲しみ</button>
+                    <button type="button" onclick="recordAnswer(2, 'B', this)">B) 幸せ</button>
+                    <button type="button" onclick="recordAnswer(2, 'C', this)">C) 怒り</button>
+                    <button type="button" onclick="recordAnswer(2, 'D', this)">D) 笑い</button>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question" id="question3">
+                <p>Q.3「เด็กชาย」という言葉が指すものは何ですか？</p>
+                <div class="choices">
+                    <button type="button" onclick="recordAnswer(3, 'A', this)">A) 少年</button>
+                    <button type="button" onclick="recordAnswer(3, 'B', this)">B) 少女</button>
+                    <button type="button" onclick="recordAnswer(3, 'C', this)">C) 赤ちゃん</button>
+                    <button type="button" onclick="recordAnswer(3, 'D', this)">D) 学生</button>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question" id="question4">
+                <p>Q.4「ตลาด」の場所はどれですか？</p>
+                <div class="choices">
+                    <button type="button" onclick="recordAnswer(4, 'A', this)">A) 学校</button>
+                    <button type="button" onclick="recordAnswer(4, 'B', this)">B) 病院</button>
+                    <button type="button" onclick="recordAnswer(4, 'C', this)">C) 市場</button>
+                    <button type="button" onclick="recordAnswer(4, 'D', this)">D) 公園</button>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question" id="question5">
+                <p>Q.5「รถไฟฟ้า」の意味は何ですか？</p>
+                <div class="choices">
+                    <button type="button" onclick="recordAnswer(5, 'A', this)">A) 電車</button>
+                    <button type="button" onclick="recordAnswer(5, 'B', this)">B) 車</button>
+                    <button type="button" onclick="recordAnswer(5, 'C', this)">C) 飛行機</button>
+                    <button type="button" onclick="recordAnswer(5, 'D', this)">D) 電気バス</button>
+                </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question" id="question6">
+                <p>Q.6「เขา ___ หนังสืออยู่。」の空欄に入るべき言葉はどれですか？</p>
+                <div class="choices">
+                    <button type="button" onclick="recordAnswer(6, 'A', this)">A) กิน</button>
+                    <button type="button" onclick="recordAnswer(6, 'B', this)">B) คุย</button>
+                    <button type="button" onclick="recordAnswer(6, 'C', this)">C) นอน</button>
+                    <button type="button" onclick="recordAnswer(6, 'D', this)">D) อ่าน</button>
+                </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question" id="question7">
+                <p>Q.7「บ้านหลังนี้ใหญ่ ___บ้านหลังนั้น。」の空欄に入るべき言葉はどれですか？</p>
+                <div class="choices">
+                    <button type="button" onclick="recordAnswer(7, 'A', this)">A) ไป</button>
+                    <button type="button" onclick="recordAnswer(7, 'B', this)">B) ไม่</button>
+                    <button type="button" onclick="recordAnswer(7, 'C', this)">C) กว่า</button>
+                    <button type="button" onclick="recordAnswer(7, 'D', this)">D) ที่สุด</button>
+                </div>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question" id="question8">
+                <p>Q.8「ฉันชอบดอกไม้นี้___กลิ่นหอม。」の空欄に適する言葉はどれですか？</p>
+                <div class="choices">
+                    <button type="button" onclick="recordAnswer(8, 'A', this)">A) แต่</button>
+                    <button type="button" onclick="recordAnswer(8, 'B', this)">B) และ</button>
+                    <button type="button" onclick="recordAnswer(8, 'C', this)">C) ถึง</button>
+                    <button type="button" onclick="recordAnswer(8, 'D', this)">D) เพราะ</button>
+                </div>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question" id="question9">
+                <p>Q.9「ไปเชียงใหม่___ รถไฟ。」の空欄に適する前置詞はどれですか？</p>
+                <div class="choices">
+                    <button type="button" onclick="recordAnswer(9, 'A', this)">A) บน</button>
+                    <button type="button" onclick="recordAnswer(9, 'B', this)">B) ด้วย</button>
+                    <button type="button" onclick="recordAnswer(9, 'C', this)">C) ที่</button>
+                    <button type="button" onclick="recordAnswer(9, 'D', this)">D) จาก</button>
+                </div>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question" id="question10">
+                <p>Q.10「เขาเป็นคน ___ เก่ง。」の空欄に適する言葉はどれですか？</p>
+                <div class="choices">
+                    <button type="button" onclick="recordAnswer(10, 'A', this)">A) ทำงาน</button>
+                    <button type="button" onclick="recordAnswer(10, 'B', this)">B) ขยัน</button>
+                    <button type="button" onclick="recordAnswer(10, 'C', this)">C) เรียบร้อย</button>
+                    <button type="button" onclick="recordAnswer(10, 'D', this)">D) ฉลาด</button>
+                </div>
+            </div>
+
+            <!-- Question 11 -->
+            <div class="question" id="question11">
+                <p>Q.11「ช่วยพูดอีกครั้งได้ไหมคะ？」の意味はどれですか？</p>
+                <div class="choices">
+                    <button type="button" onclick="recordAnswer(11, 'A', this)">A) もう一度聞いてもいいですか？</button>
+                    <button type="button" onclick="recordAnswer(11, 'B', this)">B) もう一度話してもらえますか？</button>
+                    <button type="button" onclick="recordAnswer(11, 'C', this)">C) もう少しゆっくり話してください。</button>
+                    <button type="button" onclick="recordAnswer(11, 'D', this)">D) 何か質問してもいいですか？</button>
+                </div>
+            </div>
+
+            <!-- Question 12 -->
+            <div class="question" id="question12">
+                <p>Q.12「ร้านนี้ปิดกี่โมง？」と聞かれたら、どの返答が適切ですか？</p>
+                <div class="choices">
+                    <button type="button" onclick="recordAnswer(12, 'A', this)">A) เปิดทุกวัน</button>
+                    <button type="button" onclick="recordAnswer(12, 'B', this)">B) เปิดแล้ว</button>
+                    <button type="button" onclick="recordAnswer(12, 'C', this)">C) เปิดเจ็ดโมง</button>
+                    <button type="button" onclick="recordAnswer(12, 'D', this)">D) ปิดสองทุ่ม</button>
+                </div>
+            </div>
+
+            <!-- Question 13 -->
+            <div class="question" id="question13">
+                <p>Q.13「ในประเทศไทยมีฤดูอะไรบ้าง？」の答えとして正しいものはどれですか？</p>
+                <div class="choices">
+                    <button type="button" onclick="recordAnswer(13, 'A', this)">A) 冬と春</button>
+                    <button type="button" onclick="recordAnswer(13, 'B', this)">B) 冬と夏</button>
+                    <button type="button" onclick="recordAnswer(13, 'C', this)">C) 雨季、乾季、暑季</button>
+                    <button type="button" onclick="recordAnswer(13, 'D', this)">D) 春、夏、秋、冬</button>
+                </div>
+            </div>
+
+            <!-- Question 14 -->
+            <div class="question" id="question14">
+                <p>Q.14「วันสงกรานต์」に関連する内容は何ですか？</p>
+                <div class="choices">
+                    <button type="button" onclick="recordAnswer(14, 'A', this)">A) 水をかけ合う</button>
+                    <button type="button" onclick="recordAnswer(14, 'B', this)">B) 亡くなった方を供養する</button>
+                    <button type="button" onclick="recordAnswer(14, 'C', this)">C) 王様の誕生日</button>
+                    <button type="button" onclick="recordAnswer(14, 'D', this)">D) 寺を訪れる</button>
+                </div>
+            </div>
+
+            <!-- Question 15 -->
+            <div class="question" id="question15">
+                <p>Q.15「この店に行きます」、何と言いますか？</p>
+                <div class="choices">
+                    <button type="button" onclick="recordAnswer(15, 'A', this)">A) สวัสดีครับ</button>
+                    <button type="button" onclick="recordAnswer(15, 'B', this)">B) ไปที่ไหนครับ</button>
+                    <button type="button" onclick="recordAnswer(15, 'C', this)">C) นั่งรถไปไหม</button>
+                    <button type="button" onclick="recordAnswer(15, 'D', this)">D) ไปร้านนี้ครับ</button>
+                </div>
+            </div>
+
+            <!-- Question 16 -->
+            <div class="question" id="question16">
+                <p>Q.16「ฉันหิวข้าว」 の状況に最も適切な反応はどれですか</p>
+                <div class="choices">
+                    <button type="button" onclick="recordAnswer(16, 'A', this)">A) ฉันไม่สบาย</button>
+                    <button type="button" onclick="recordAnswer(16, 'B', this)">B) ไปกินข้าวกันไหม</button>
+                    <button type="button" onclick="recordAnswer(16, 'C', this)">C) กินข้าวแล้ว</button>
+                    <button type="button" onclick="recordAnswer(16, 'D', this)">D) นอนก่อนนะ</button>
+                </div>
+            </div>
+
+            <button id="submitQuiz" type="button" onclick="submitAnswers()">Submit</button>
+            <div class="result" id="result"></div>
+            <button class="retry-btn" type="button" onclick="retryQuiz()">再試行</button>
+        </form>
+    </div>
+
+    <script>
+        const correctAnswers = {
+            1: 'C', 2: 'B', 3: 'A', 4: 'C', 5: 'A', 6: 'D',
+            7: 'C', 8: 'D', 9: 'B', 10: 'A', 11: 'B', 12: 'D',
+            13: 'C', 14: 'A', 15: 'D', 16: 'B'
+        };
+        const userAnswers = {};
+
+        function recordAnswer(questionNum, selectedAnswer, button) {
+            userAnswers[questionNum] = selectedAnswer;
+
+            // Remove the "selected" class from all buttons in the same question
+            const buttons = button.parentElement.querySelectorAll('button');
+            buttons.forEach(btn => btn.classList.remove('selected'));
+
+            // Add the "selected" class to the clicked button
+            button.classList.add('selected');
+        }
+
+        function submitAnswers() {
+            const totalQuestions = Object.keys(correctAnswers).length;
+            let score = 0;
+            let resultHTML = '';
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                if (userAnswers[i] === correctAnswers[i]) {
+                    score++;
+                } else {
+                    resultHTML += `<p>Question ${i}: 正しい答えは <span class='correct-answer'>${correctAnswers[i]}</span></p>`;
+                }
+            }
+
+            const resultDiv = document.getElementById('result');
+
+            if (score === totalQuestions) {
+                resultDiv.innerHTML = 'เก่งมาก​!';
+                resultDiv.classList.add('success');
+                resultDiv.classList.remove('failure');
+            } else {
+                resultDiv.innerHTML = `You got ${score}/${totalQuestions} correct.<br>${resultHTML}`;
+                resultDiv.classList.add('failure');
+                resultDiv.classList.remove('success');
+            }
+        }
+
+        function retryQuiz() {
+            location.reload();
+        }
+    </script>
+
+</body>
+</html>
