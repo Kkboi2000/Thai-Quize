@@ -63,12 +63,12 @@
         <form id="quizForm">
             <!-- Question 1 -->
             <div class="question" id="question1">
-                <p>Q.1 タイ語の「แม่บ้าน」の意味は何ですか？</p>
+                <p>Q.1 タイ語の「กลัว」の意味は何ですか？</p>
                 <div class="choices">
-                    <button type="button" onclick="recordAnswer(1, 'A', this)">A) 母親</button>
-                    <button type="button" onclick="recordAnswer(1, 'B', this)">B) 家政婦</button>
-                    <button type="button" onclick="recordAnswer(1, 'C', this)">C) 主婦</button>
-                    <button type="button" onclick="recordAnswer(1, 'D', this)">D) 学生</button>
+                    <button type="button" onclick="recordAnswer(1, 'A', this)">A) 腹立つ</button>
+                    <button type="button" onclick="recordAnswer(1, 'B', this)">B) 優しい</button>
+                    <button type="button" onclick="recordAnswer(1, 'C', this)">C) 怖い</button>
+                    <button type="button" onclick="recordAnswer(1, 'D', this)">D) 嬉しい</button>
                 </div>
             </div>
 
@@ -236,7 +236,51 @@
                     <button type="button" onclick="recordAnswer(16, 'D', this)">D) นอนก่อนนะ</button>
                 </div>
             </div>
-
+            
+                        <!-- Question 17 -->
+            <div class="question" id="question16">
+                <p>Q.17 เด็ก ๆ ชอบ(________)ของหวานの空欄に入るべき言葉はどれですか？</p>
+                <div class="choices">
+                    <button type="button" onclick="recordAnswer(16, 'A', this)">A) ดู</button>
+                    <button type="button" onclick="recordAnswer(16, 'B', this)">B) ลอง</button>
+                    <button type="button" onclick="recordAnswer(16, 'C', this)">C) เปิด</button>
+                    <button type="button" onclick="recordAnswer(16, 'D', this)">D) กิน</button>
+                </div>
+            </div>
+                        
+                        <!-- Question 18 -->
+            <div class="question" id="question16">
+                <p>Q.18 พี่สาวของฉันกำลัง(________)รูปสวยๆ の空欄にべき言葉はどれですか？</p>
+                <div class="choices">
+                    <button type="button" onclick="recordAnswer(16, 'A', this)">A) วาด</button>
+                    <button type="button" onclick="recordAnswer(16, 'B', this)">B) ฟัง</button>
+                    <button type="button" onclick="recordAnswer(16, 'C', this)">C) พูด</button>
+                    <button type="button" onclick="recordAnswer(16, 'D', this)">D) ร้อง</button>
+                </div>
+            </div>
+            
+                        <!-- Question 19 -->
+            <div class="question" id="question16">
+                <p>Q.19 「อนาคต」 の意味は何ですか？</p>
+                <div class="choices">
+                    <button type="button" onclick="recordAnswer(16, 'A', this)">A) 過去</button>
+                    <button type="button" onclick="recordAnswer(16, 'B', this)">B) 将来</button>
+                    <button type="button" onclick="recordAnswer(16, 'C', this)">C) 現在</button>
+                    <button type="button" onclick="recordAnswer(16, 'D', this)">D) 最近</button>
+                </div>
+            </div>
+                        
+                        <!-- Question 20 -->
+            <div class="question" id="question16">
+                <p>Q.16「ยาว」 の意味は何ですか？</p>
+                <div class="choices">
+                    <button type="button" onclick="recordAnswer(16, 'A', this)">A) 短い</button>
+                    <button type="button" onclick="recordAnswer(16, 'B', this)">B) 遅い</button>
+                    <button type="button" onclick="recordAnswer(16, 'C', this)">C) 長い</button>
+                    <button type="button" onclick="recordAnswer(16, 'D', this)">D) 太い</button>
+                </div>
+            </div>
+            
             <button id="submitQuiz" type="button" onclick="submitAnswers()">Submit</button>
             <div class="result" id="result"></div>
             <button class="retry-btn" type="button" onclick="retryQuiz()">再試行</button>
@@ -247,7 +291,8 @@
         const correctAnswers = {
             1: 'C', 2: 'B', 3: 'A', 4: 'C', 5: 'A', 6: 'D',
             7: 'C', 8: 'D', 9: 'B', 10: 'A', 11: 'B', 12: 'D',
-            13: 'C', 14: 'A', 15: 'D', 16: 'B'
+            13: 'C', 14: 'A', 15: 'D', 16: 'B', 17: 'D', 18: 'A'
+            , 19: 'B', 20: 'C'
         };
         const userAnswers = {};
 
